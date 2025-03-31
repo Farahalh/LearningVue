@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <style>
+      .title {
+        color: red;
+      }
+    </style>
+    <script type="module">
+      import { createApp } from "vue";
+
+      var rootComponent = {
+        data() {
+          return {
+            message: "Hello",
+            titleClass: "title",
+            count: 0,
+          };
+        },
+        methods: {
+          increment() {
+            this.count++;
+          },
+        },
+      };
+
+      createApp(rootComponent).mount("#app");
+    </script>
+
+    <div id="app">
+      <h1 v-bind:class="titleClass">{{message}}</h1>
+      <button @click="increment">Count is: {{count}}</button>
+      <!-- add dynamic class binding here -->
+    </div>
+  </body>
+</html>
