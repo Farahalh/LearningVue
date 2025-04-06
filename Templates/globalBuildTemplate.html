@@ -3,22 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-
-    <script type="importmap">
-      {
-        "imports": {
-          "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
-        }
-      }
-    </script>
+    <title>Global Build Template</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
   <body>
     <div id="app">{{ message }}</div>
 
-    <script type="module">
-      //   import { createApp } from "https://unpkg.com/vue@3/dist/vue.esm-browser.js";
-      import { createApp } from "vue";
+    <script>
+      const { createApp } = Vue;
 
       createApp({
         data() {

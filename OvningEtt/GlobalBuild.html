@@ -3,10 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Global Build</title>
 
-    <!-- Using Global Build -->
-    <!-- https://vuejs.org/guide/quick-start.html -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
   <body>
@@ -18,17 +16,6 @@
     </style>
     <div id="app">{{ greetingPhrase + message }}</div>
 
-    <script>
-      const { createApp } = Vue;
-
-      createApp({
-        data() {
-          return {
-            greetingPhrase: "Hello there ",
-            message: "Farah!",
-          };
-        },
-      }).mount("#app");
-    </script>
+    <script src="app.js"></script>
   </body>
 </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attibute Bindings</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <style>
+      .title {
+        color: red;
+      }
+    </style>
+
+    <script type="module">
+      const { createApp } = Vue;
+
+      createApp({
+        data() {
+          return {
+            titleClass: "title",
+            message: "Make me red!",
+          };
+        },
+      }).mount("#app");
+    </script>
+
+    <div id="app">
+      <h1 :class="titleClass">{{message}}</h1>
+    </div>
+  </body>
+</html>
