@@ -3,22 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Getting Started</title>
+    <title>Event Listeners</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   </head>
   <body>
-    <div id="app">{{ message }}</div>
 
     <script type="module">
       const { createApp } = Vue;
+createApp({
+  data() {
+    return {
+      count: 0
+    }
+  },
+  methods: {
+    increment() {
+        this.count++
+    }
+  }
+}).mount('#app')
+</script>
 
-      createApp({
-        data() {
-          return {
-            message: "Hello Vue!",
-          };
-        },
-      }).mount("#app");
+<div id="app">
+  <button @click="increment">Count is: {{ count }}</button>
+</div>
     </script>
   </body>
 </html>
